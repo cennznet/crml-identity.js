@@ -1,0 +1,30 @@
+{
+    "name": "@cennznet/identity",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {},
+    "devDependencies": {
+        "@types/jest": "^24.0.9",
+        "cz-lerna-changelog": "^2.0.2",
+        "husky": "^1.1.1",
+        "jest": "24.1.0",
+        "jest-environment-node": "^24.0.0",
+        "lerna": "^3.13.1",
+        "prettier": "^1.13.5",
+        "ts-jest": "^24.0.0",
+        "tslint": "^5.13.1",
+        "tslint-microsoft-contrib": "^6.0.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-lerna-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "prettier --write 'packages/**/src/**/*'"
+        }
+    }
+}
