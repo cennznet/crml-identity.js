@@ -20,17 +20,17 @@
         "test:e2e": "jest --runInBand --detectOpenHandles --forceExit  --no-cache -c ../../jest/jest.config.js e2e "
     },
     "peerDependencies": {
-        "@cennznet/api": ">= 0.12.3",
-        "@cennznet/types": ">= 0.12.3",
-        "@cennznet/util": ">= 0.12.3"
+        "@cennznet/api": ">= 0.13.5",
+        "@cennznet/types": ">= 0.13.5",
+        "@cennznet/util": ">= 0.13.5"
     },
     "devDependencies": {
-        "@cennznet/api": "^0.12.3",
-        "@cennznet/crml-generic-asset": "^0.7.2",
-        "@cennznet/crml-cennzx-spot": "^0.5.3",
-        "@cennznet/types": "^0.12.3",
-        "@cennznet/util": "^0.12.3",
-        "@cennznet/wallet": "^0.12.3",
+        "@cennznet/api": "^0.13.5",
+        "@cennznet/crml-generic-asset": ">=0.8.1",
+        "@cennznet/crml-cennzx-spot": "*",
+        "@cennznet/types": "^0.13.5",
+        "@cennznet/util": "^0.13.5",
+        "@cennznet/wallet": "^0.13.5",
         "@types/jest": "^23.3.10",
         "bn.js": "4.11.8",
         "jest": "23.6.0",
@@ -42,6 +42,6 @@
         "rollup-plugin-sourcemaps": "^0.4.2",
         "rollup-plugin-typescript2": "^0.17.1",
         "tslint": "^5.11.0",
-        "typescript": "^3.1.6"
+        "typescript": "^3.4.5"
     }
 }
