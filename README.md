@@ -1,26 +1,14 @@
 # Cennznet Identity / Attestation
 
-The attestation module for Cennznet's Identity Service.
+A sdk providing additional features for Cennznet's Identity Service.
 
-## Getting Started
 
-Hello and welcome to CENNZnet! We're happy to have users like you joining our platform and we're beyond excited to welcome you in UNfucking the world! This README should hopefully allow you to get set up and start running our attestation SDK.
 
-### Prerequisites
+### Install
 
-This is a fairly developer oriented document, so please make sure you are familiar with how to use JavaScript, Polkadot and the Substrate/CENNZnet ecoystem before proceeding further.
-
-### Installation
-
-Here's the code to get started. 
-Create a new folder and run `npm init -y` and then run the following commands
 ```
-$> npm i @cennznet/attestation @cennznet/api @cennznet/types @cennznet/util @cennznet/wallet
+$> npm i --save @cennznet/crml-attestation @cennznet/api @cennznet/crml-generic-asset @cennznet/crml-cennzx-spot 
 ```
-
-Please ensure that you are on Node 10+ and NPM 5+ for the code to compile properly.
-
-The above should be fairly standard for a developer versed in JavaScript and NodeJS, if you need a refresher however, [here is a good starting point](https://www.sitepoint.com/beginners-guide-node-package-manager/)
 
 ### Basic Setup 
 
@@ -30,7 +18,7 @@ First create a file and name it `index.js` and write the following two lines in:
 
 ```javascript
 const {Api} = require('@cennznet/api')
-const {Attestation} = require('@cennznet/attestation')
+const {Attestation} = require('@cennznet/crml-attestation')
 ```
 
 This loads up a version of the Attestation SDK that we will be using to call the code. This will be the foundation of your attestation requests.
@@ -87,7 +75,7 @@ Add the following lines to your file:
 ```javascript
 async function main () {
     simpleKeyring.addFromSeed(issuer.seed);
-    const api = await Api.create({provider: 'wss://cennznet-node-0.centrality.me:9944'});
+    const api = await Api.create({provider: 'wss://rimu.unfrastructure.io/ws?apikey=***'});
     const passphrase = '<insert issuer passphrase here>';
     await wallet.createNewVault(passphrase);
     await wallet.addKeyring(simpleKeyring);
@@ -110,9 +98,9 @@ const claim = await attestation.setClaim(
     value,
 );
 
-await claim.signAndSend(issuer.address, async result => {
-    if (result.type === 'Finalised' && result.events !== undefined) {
-      const { data } = result.events[0].event.toJSON();
+await claim.signAndSend(issuer.address, async ({result, event}) => {
+    if (result.isFinalized && events !== undefined) {
+      const { data } = events[0].event.toJSON();
       console.log(data)
     }
 });
