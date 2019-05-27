@@ -1,6 +1,6 @@
 {
     "name": "@cennznet/crml-attestation",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "cennznet's javascript library for supporting identity runtime",
     "author": "Centrality Development Team",
     "homepage": "https://github.com/cennznet/crml-identity.js/tree/master/packages/attestation",
