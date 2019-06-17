@@ -82,8 +82,8 @@ describe('AttestationRx APIs', () => {
             claim
                 .signAndSend(issuer.address)
                 .pipe(
-                    filter(result => {
-                        return result.type === 'Finalised' && result.events !== undefined;
+                    filter(({events, status}) => {
+                        return status.isFinalized && events !== undefined;
                     }),
                     first()
                 )
@@ -105,8 +105,8 @@ describe('AttestationRx APIs', () => {
             claim
                 .signAndSend(issuer.address)
                 .pipe(
-                    filter(result => {
-                        return result.type === 'Finalised' && result.events !== undefined;
+                    filter(({events, status}) => {
+                        return status.isFinalized && events !== undefined;
                     }),
                     first()
                 )
@@ -141,8 +141,8 @@ describe('AttestationRx APIs', () => {
             claim
                 .signAndSend(issuer.address)
                 .pipe(
-                    filter(result => {
-                        return result.type === 'Finalised' && result.events !== undefined;
+                    filter(({events, status}) => {
+                        return status.isFinalized && events !== undefined;
                     })
                 )
                 .subscribe(result => {
@@ -163,8 +163,8 @@ describe('AttestationRx APIs', () => {
             claim
                 .signAndSend(issuer.address)
                 .pipe(
-                    filter(result => {
-                        return result.type === 'Finalised' && result.events !== undefined;
+                    filter(({events, status}) => {
+                        return status.isFinalized && events !== undefined;
                     })
                 )
                 .subscribe(result => {
@@ -185,8 +185,8 @@ describe('AttestationRx APIs', () => {
             claim
                 .signAndSend(issuer2.address)
                 .pipe(
-                    filter(result => {
-                        return result.type === 'Finalised' && result.events !== undefined;
+                    filter(({events, status}) => {
+                        return status.isFinalized && events !== undefined;
                     })
                 )
                 .subscribe(result => {
@@ -207,8 +207,8 @@ describe('AttestationRx APIs', () => {
             claim
                 .signAndSend(issuer2.address)
                 .pipe(
-                    filter(result => {
-                        return result.type === 'Finalised' && result.events !== undefined;
+                    filter(({events, status}) => {
+                        return status.isFinalized && events !== undefined;
                     })
                 )
                 .subscribe(result => {
@@ -253,8 +253,8 @@ describe('AttestationRx APIs', () => {
             claim
                 .signAndSend(issuer.address)
                 .pipe(
-                    filter(result => {
-                        return result.type === 'Finalised' && result.events !== undefined;
+                    filter(({events, status}) => {
+                        return status.isFinalized && events !== undefined;
                     })
                 )
                 .subscribe(result => {

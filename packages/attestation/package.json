@@ -15,9 +15,7 @@
         "url": "git+ssh://git@github.com/cennznet/crml-identity.js.git"
     },
     "scripts": {
-        "build": "rimraf dist && rollup -c rollup.config.ts",
-        "test:unit": "jest --coverage -c ../../jest/jest.config.js spec",
-        "test:e2e": "jest --runInBand --detectOpenHandles --forceExit  --no-cache -c ../../jest/jest.config.js e2e "
+        "build": "rimraf dist && rollup -c rollup.config.ts"
     },
     "peerDependencies": {
         "@cennznet/api": ">= 0.13.5",
