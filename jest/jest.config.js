@@ -12,6 +12,13 @@ module.exports = {
     testMatch: ['/**/?(*.)+(spec|e2e).[jt]s?(x)'],
     testEnvironment: 'node',
     preset: 'ts-jest',
+    moduleNameMapper: {
+        '@cennznet/crml-attestation(.*)$': '<rootDir>/packages/attestation/src/$1',
+    },
+    modulePathIgnorePatterns: [
+        '<rootDir>/build',
+        '<rootDir>/packages/attestation/build'
+    ],
     collectCoverageFrom: ['src/**/*.[jt]s?(x)', '!**/node_modules/**'],
     coverageReporters: ['json', 'html'],
     coverageThreshold: {
@@ -22,6 +29,6 @@ module.exports = {
             statements: -10,
         },
     },
-    testEnvironment: '../../jest/env.js',
-    setupTestFrameworkScriptFile: '../../jest/jest.setup.js'
+    testEnvironment: './jest/env.js',
+    setupFilesAfterEnv: ['./jest/jest.setup.js']
 };
