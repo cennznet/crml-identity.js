@@ -1,6 +1,10 @@
 {
     "name": "@cennznet/identity",
     "private": true,
+    "engines": {
+        "node": ">=10.13.0",
+        "yarn": "^1.12.3"
+    },
     "workspaces": [
         "packages/*"
     ],
